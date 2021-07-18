@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Base">
+      <UniqueIdentifier>{e0f40536-5ba4-4259-8947-bdf6f9132d5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Helper">
+      <UniqueIdentifier>{a8b46bb4-18eb-49c4-b568-5c40f77138e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RedisManager">
+      <UniqueIdentifier>{e166557f-be14-48f4-865f-330ef94ec2fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{3c9a8522-6959-483c-b905-7471bf50b38c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeHelper.h">
+      <Filter>Base\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="DumpHelper.h">
+      <Filter>Base\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="UtilHelper.h">
+      <Filter>Base\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="RedisManager.h">
+      <Filter>RedisManager</Filter>
+    </ClInclude>
+    <ClInclude Include="chat_message.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="TowerGameServerAsio.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="RedisManager.cpp">
+      <Filter>RedisManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

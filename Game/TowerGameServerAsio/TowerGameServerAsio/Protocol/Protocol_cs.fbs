@@ -1,0 +1,296 @@
+namespace ProtocolCS;
+
+
+//======================================================================================================================
+// 공통 테이블
+//======================================================================================================================
+table playerInfo
+{
+    accountUID:long=0;
+	playerIdx:int=0;
+	userID:string;
+	point:int=0;
+}
+
+table test
+{
+	accoutnUID:long=0;
+}
+
+enum E_GameStatus : int 
+{
+	NONE = 0,
+	LOADING,
+	START,
+	PLAYING,
+	RESULT,
+	END,
+}
+
+enum E_ErrorResult : int 
+{
+	INVAILD_USERID,
+
+
+	INVAILD_ROOM,
+	EXPIRE_ROOM,
+	NOT_JOIN_ROOM,
+	INVAILD_GAME_STATE,
+}
+
+
+//======================================================================================================================
+namespace ProtocolCS.Login; 
+//======================================================================================================================
+
+table LoginReq
+{
+	deviceType:int=0;
+	userID:string;
+}
+
+table LoginAck
+{
+	result:int=0;					//0이외 실패
+	gameServerID:int=0;				//현재 접속한 게임서버ID
+	accountUID:long=0;				//자신의 accoutUID  // long ? int ?
+}
+
+//======================================================================================================================
+namespace ProtocolCS.Game;
+//======================================================================================================================
+
+table GameServerReq
+{
+	packetType:string;
+	packetUserID:string;
+	version:string;
+	clientVersion:string;
+	Data:string;
+	authKey:string;
+	packetData:string;
+}
+
+table GameServerAck
+{
+	result:int=0;
+	Data:string;
+}
+
+table GameMatchingReq
+{
+	gameServerID:int=0;
+}
+
+table GameMatchingCancelReq
+{
+	gameServerID:int=0;
+}
+
+table GameMatchingCancelNotify
+{
+	result:int=0;
+}
+
+table GameMatchingNotify			//게임을 찾았을때(매칭이 되었을때) 서버에서 보내주는 notify
+{
+	result:int=0;					//0이외 실패
+	roomUID:int=0;					//입장예정인 방의 UID
+	currentServerTime:long=0;		//입장가능 시간
+	readyTime:long=0;				//입장까지(레디)남은시간
+}
+
+table GameReadyReq
+{
+	roomUID:int=0;					//클라에서 GameMatchingNotify 에서 받은 currentServerTime 안에 gameReady를 눌어야함
+	deckIdx:int=0;					// deck index 필요
+}
+
+table GameReadyAck	
+{
+	result:int=0;					//게임 레디에대한 응답
+}
+
+table GameReadyNotify				//모든 플레이어가 Ready 하였을때 서버에서 보내주는 notify (p2p 그룹이 생성된다)
+{
+	groupHostID:int=0;				//p2p 그룹에서 사용하는 hostID
+	playerInfos:[playerInfo];		//플레이어 정보
+}
+
+table GameLoadingFinishReq
+{
+	roomUID:int=0;
+}
+
+table GameLoadingFinishAck
+{
+	result:int=0;
+}
+
+table GameStartNotify
+{
+	currentServerTime:long=0;
+}
+
+table GameStatusNotify
+{
+	gameStauts:E_GameStatus;
+	currentServerTime:long=0;
+	playTime:float=0;
+}
+
+table GameGiveUpReq          
+{
+	roomUID:int=0;
+}
+
+table GameGiveUpNotify
+{
+	result:int=0;
+	accountUID:long=0;				//게임포기한 user 
+}
+
+table GameEndReq
+{
+	gameResult:int=0;				//0:무승부 1:승리 2:패배 
+}
+
+table GameEndAck
+{
+	result:int=0;
+	beforePoint:int=0;
+	afterPoint:int=0;
+	currentServerTime:long=0;	
+}
+
+table GameEndNotify
+{
+	result:int=0;
+	winnerAccountUID:long=0;
+	playerInfos:[playerInfo];		//플레이어 정보
+}
+
+
+//======================================================================================================================
+
+
+
+//======================================================================================================================
+namespace ProtocolCS.Room;
+//======================================================================================================================
+
+table BuildReq
+{
+	accountUID:long=0;
+	posX:int=0;
+	posY:int=0;
+	objectID:int=0;
+}
+
+table SellTowerReq
+{
+	accountUID:long=0;
+	posX:int=0;
+	posY:int=0;
+	objectID:int=0;
+}
+
+table UpgradeTowerReq
+{
+	accountUID:long=0;
+	posX:int=0;
+	posY:int=0;
+	objectID:int=0;
+}
+
+table AttackReq
+{
+	accountUID:long=0;
+	objectID:int=0;
+}
+
+table UpgradeReq
+{
+	accountUID:long=0;
+	objectID:int=0;
+}
+
+table KillUnitReq
+{
+	accountUID:long=0;
+	objectID:int=0;
+}
+
+table PlayerLoseReq
+{
+	accountUID:long=0;
+	playerIndex:int=0;
+}
+
+//======================================================================================================================
+
+namespace ProtocolCS;
+
+table ErrorMsg
+{
+	result:E_ErrorResult;
+}
+
+union MessageType
+{
+
+	ErrorMsg,
+
+// =========================== Login Begin ===============================
+	Login.LoginReq,
+	Login.LoginAck,
+// =========================== Login End   ===============================
+
+
+// =========================== Game Begin ===============================
+	Game.GameServerReq,
+	Game.GameServerAck,
+
+	Game.GameMatchingReq,
+	Game.GameMatchingNotify,
+
+	Game.GameMatchingCancelReq,
+	Game.GameMatchingCancelNotify,
+
+	Game.GameReadyReq,
+	Game.GameReadyAck,
+	Game.GameReadyNotify,
+
+	Game.GameLoadingFinishReq,
+	Game.GameLoadingFinishAck,
+	
+	Game.GameStartNotify,
+	Game.GameStatusNotify,
+
+	Game.GameGiveUpReq,
+	Game.GameGiveUpNotify,
+
+	Game.GameEndReq,
+	Game.GameEndAck,
+	Game.GameEndNotify,
+
+// =========================== Game End ===============================
+
+
+// =========================== Room Begin ===============================
+	Room.BuildReq,
+	Room.AttackReq,
+	Room.UpgradeReq,
+	Room.KillUnitReq,
+	Room.PlayerLoseReq,
+// =========================== Room End ===============================
+
+}
+
+
+
+table MessageRoot {
+    message:MessageType; // Union
+}
+
+root_type MessageRoot;

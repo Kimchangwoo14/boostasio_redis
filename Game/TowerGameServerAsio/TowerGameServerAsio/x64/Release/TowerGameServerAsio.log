@@ -1,0 +1,23 @@
+﻿  stdafx.cpp
+  RedisManager.cpp
+  Unknown compiler version - please run the configure tests and report the results
+c:\users\admin\desktop\tcp - 복사본\game\towergameserverasio\towergameserverasio\redismanager.cpp(68): warning C4244: '초기화 중': 'PORT_LONGLONG'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\admin\desktop\tcp - 복사본\game\towergameserverasio\towergameserverasio\redismanager.cpp(200): warning C4244: '초기화 중': 'PORT_LONGLONG'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TowerGameServerAsio.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  코드를 생성하고 있습니다.
+  1727 of 2571 functions (67.2%) were compiled, the rest were copied from previous compilation.
+    59 functions were new in current compilation
+    196 functions had inline decision re-evaluated but remain unchanged
+  코드를 생성했습니다.
+hiredis.lib(hiredis.obj) : warning LNK4099: 'hiredis.pdb' PDB를 'hiredis.lib(hiredis.obj)' 또는 'C:\Users\Admin\Desktop\TCP - 복사본\Game\TowerGameServerAsio\x64\Release\hiredis.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+hiredis.lib(net.obj) : warning LNK4099: 'hiredis.pdb' PDB를 'hiredis.lib(net.obj)' 또는 'C:\Users\Admin\Desktop\TCP - 복사본\Game\TowerGameServerAsio\x64\Release\hiredis.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+hiredis.lib(sds.obj) : warning LNK4099: 'hiredis.pdb' PDB를 'hiredis.lib(sds.obj)' 또는 'C:\Users\Admin\Desktop\TCP - 복사본\Game\TowerGameServerAsio\x64\Release\hiredis.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+win32_interop.lib(win32_error.obj) : warning LNK4099: 'win32_interop.pdb' PDB를 'win32_interop.lib(win32_error.obj)' 또는 'C:\Users\Admin\Desktop\TCP - 복사본\Game\TowerGameServerAsio\x64\Release\win32_interop.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+win32_interop.lib(win32_fdapi.obj) : warning LNK4099: 'win32_interop.pdb' PDB를 'win32_interop.lib(win32_fdapi.obj)' 또는 'C:\Users\Admin\Desktop\TCP - 복사본\Game\TowerGameServerAsio\x64\Release\win32_interop.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+win32_interop.lib(win32_fdapi_crt.obj) : warning LNK4099: 'win32_interop.pdb' PDB를 'win32_interop.lib(win32_fdapi_crt.obj)' 또는 'C:\Users\Admin\Desktop\TCP - 복사본\Game\TowerGameServerAsio\x64\Release\win32_interop.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+win32_interop.lib(win32_variadic_functor.obj) : warning LNK4099: 'win32_interop.pdb' PDB를 'win32_interop.lib(win32_variadic_functor.obj)' 또는 'C:\Users\Admin\Desktop\TCP - 복사본\Game\TowerGameServerAsio\x64\Release\win32_interop.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+win32_interop.lib(win32_rfdmap.obj) : warning LNK4099: 'win32_interop.pdb' PDB를 'win32_interop.lib(win32_rfdmap.obj)' 또는 'C:\Users\Admin\Desktop\TCP - 복사본\Game\TowerGameServerAsio\x64\Release\win32_interop.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+win32_interop.lib(win32_ANSI.obj) : warning LNK4099: 'win32_interop.pdb' PDB를 'win32_interop.lib(win32_ANSI.obj)' 또는 'C:\Users\Admin\Desktop\TCP - 복사본\Game\TowerGameServerAsio\x64\Release\win32_interop.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+win32_interop.lib(win32_common.obj) : warning LNK4099: 'win32_interop.pdb' PDB를 'win32_interop.lib(win32_common.obj)' 또는 'C:\Users\Admin\Desktop\TCP - 복사본\Game\TowerGameServerAsio\x64\Release\win32_interop.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+  TowerGameServerAsio.vcxproj -> C:\Users\Admin\Desktop\TCP - 복사본\Game\TowerGameServerAsio\x64\Release\TowerGameServerAsio.exe

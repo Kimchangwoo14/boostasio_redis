@@ -1,0 +1,9 @@
+﻿  stdafx.cpp
+  TowerGameClientAsio.cpp
+  Unknown compiler version - please run the configure tests and report the results
+  코드를 생성하고 있습니다.
+  1576 of 1598 functions (98.6%) were compiled, the rest were copied from previous compilation.
+    27 functions were new in current compilation
+    6 functions had inline decision re-evaluated but remain unchanged
+  코드를 생성했습니다.
+  TowerGameClientAsio.vcxproj -> C:\project\tcp\boostasio_redis\Game\TowerGameClientAsio\x64\Release\TowerGameClientAsio.exe
