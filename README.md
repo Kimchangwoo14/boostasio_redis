@@ -13,3 +13,7 @@ c++
 ## boost asio Chat demo(server / client)
 
 if server recive chat save redis
+
+
+##
+if boost asio .lib error unzip "lib.zip"
